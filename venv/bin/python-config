@@ -1,4 +1,4 @@
-#!/Users/luis/Documents/GitHub/webchatCanou/venv/bin/python
+#!/home/oton/Documentos/Pollstr-dev/webchatBelieff/venv/bin/python
 
 import sys
 import getopt

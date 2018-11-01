@@ -3,7 +3,7 @@
 
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/0.3.4/sockjs.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script>
@@ -28,12 +28,14 @@
           return $(this).attr('id');
         }).get();
         conn = new SockJS('http://' + window.location.host + '/chat', "websocket");
+        console.log(conn)
         conn.onopen = function() {
-          log('¡Hola! Como te puedo ayudar?');
+          log('¡Hola! ¿Cuál es tu nombre?');
           update_ui();
         };
         conn.onmessage = function(e) {
           log(e.data);
+
         };
         conn.onclose = function() {
           log('Hasta luego!');
@@ -73,9 +75,12 @@
       });
 
       $('form').submit(function() {
-        var text = $('#text').val();
+        var text = document.getElementById("text").value;
+        console.log(text);
         logUser(text);
+        //log('Sending ' + text)
         conn.send(text);
+        //console.log(conn.send(text));
         $('#text').val('').focus();
         return false;
       });
