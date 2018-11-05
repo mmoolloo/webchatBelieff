@@ -30,7 +30,7 @@
         conn = new SockJS('http://' + window.location.host + '/chat', "websocket");
         console.log(conn)
         conn.onopen = function() {
-          log('¡Hola! ¿Cuál es tu nombre?');
+          log('¿Cómo te llamas? Dime tu primer nombre.')
           update_ui();
         };
         conn.onmessage = function(e) {
@@ -38,7 +38,7 @@
 
         };
         conn.onclose = function() {
-          log('Hasta luego!');
+          log('Nos contactaremos pronto contigo, suerte!!');
           conn = null;
           update_ui();
         };
