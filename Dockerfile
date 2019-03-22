@@ -1,10 +1,10 @@
 FROM ubuntu:12.04
 FROM python:2.7
 
-COPY /. /.
-COPY /production/. /var/www/pollstrReindhart/.
+COPY /. /webchat/.
+COPY /webchat/. /var/www/webchat/.
 COPY /apache/0.0.0.0.conf /etc/apache2/sites-available/0.0.0.0.conf
-COPY /apache/pollstrReindhart.wsgi /var/www/pollstrReindhart/pollstrReindhart.wsgi
+COPY /apache/webchat.wsgi /var/www/webchat/webchat.wsgi
 COPY /apache/host /etc/host
 
 RUN pip install -r requirements.txt
@@ -19,6 +19,7 @@ RUN apt-get update && \
   apt-get install -y libexpat1 && \
   apt-get install -y ssl-cert && \
   apt-get install -y libapache2-mod-wsgi && \
+  apt-get install -y openssh-server && \
   a2ensite 0.0.0.0.conf
 
 ENV TZ=America/Mexico_City
