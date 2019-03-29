@@ -74,7 +74,7 @@
     </div>
   </div>
   <div class="container">
-    <form id="chatform" class="center" name="userData">
+    <form id="chatform" class="center" name="userData" action="http://54.147.190.68:8011/userData">
       <div class="row">
         <div class="col s9">
           <input id="nombre" placeholder="Escriba aquí su respuesta" type="text" data-length="50">
@@ -86,6 +86,7 @@
           <input id="trabajo_puesto" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
           <input id="trabajo_func" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
           <input id="chingon" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="jsonData" placeholder="Escriba aquí su respuesta" type="text" class="">
         </div>
         <div class="col s3">
           <a id="sendNombre" onclick="sendUserMessage('nombre');" class="btn waves-effect belieff-green" >Enviar<i class="material-icons right">send</i></a>
@@ -96,7 +97,7 @@
           <a id="sendTrabajo_periodo_fin" onclick="sendUserMessage('trabajo_periodo_fin');" class="btn waves-effect belieff-green hide-element">Enviar<i class="material-icons right">send</i></a>
           <a id="sendTrabajo_puesto" onclick="sendUserMessage('trabajo_puesto');" class="btn waves-effect belieff-green hide-element">Enviar<i class="material-icons right">send</i></a>
           <a id="sendTrabajo_func" onclick="sendUserMessage('trabajo_func');" class="btn waves-effect belieff-green hide-element">Enviar<i class="material-icons right">send</i></a>
-          <a id="sendChingon" onclick="sendUserMessage('chingon');" class="btn waves-effect belieff-green hide-element">Enviar<i class="material-icons right">send</i></a>
+          <button id="sendChingon" onclick="sendUserMessage('chingon');" class="btn waves-effect belieff-green hide-element" type="submit">Enviar<i class="material-icons right">send</i></button>
         </div>
       </div>
       <div id="actual" class="row hide-element">
@@ -112,7 +113,7 @@
           <a id="pasadoSi" onclick="sendUserMessage('pasadoSi');" class="btn waves-effect belieff-green">Sí</a>
         </div>
         <div class="col s6">
-          <a id="pasadoNo" onclick="sendUserMessage('pasadoNo');" class="btn waves-effect belieff-greent">No</a>
+          <button id="pasadoNo" onclick="sendUserMessage('pasadoNo');" class="btn waves-effect belieff-greent" type="submit">No</button>
         </div>
       </div>
     </form>
@@ -361,7 +362,7 @@
     userJson.datos_laborales.experiencia[0].trabajo_puesto = fieldTrabajo_puesto.value;
     userJson.datos_laborales.experiencia[0].trabajo_func = fieldTrabajo_func.value;
     userJson.educacion_y_habilidades.chingon = fieldChingon.value;
-    displayBotMessage("Los datos son: " + JSON.stringify(userJson));
+    document.getElementById("userData").value = "";
   }
 
 </script>
