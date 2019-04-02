@@ -74,19 +74,19 @@
     </div>
   </div>
   <div class="container">
-    <form id="chatform" class="center" name="userData" action="http://54.147.190.68:8011/userData">
+    <form id="chatform" class="center" name="userData" action="http://54.147.190.68:8011/userData" method="POST">
       <div class="row">
         <div class="col s9">
-          <input id="nombre" placeholder="Escriba aquí su respuesta" type="text" data-length="50">
-          <input id="apellido" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="movil_num" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="id_user" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="trabajo_cia" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="trabajo_periodo_fin" placeholder="Escriba aquí su respuesta" type="text" class="datepicker hide-element">
-          <input id="trabajo_puesto" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="trabajo_func" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="chingon" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
-          <input id="jsonData" placeholder="Escriba aquí su respuesta" type="text" class="">
+          <input id="nombre" name="nombre" placeholder="Escriba aquí su respuesta" type="text" data-length="50">
+          <input id="apellido" name="apellido" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="movil_num" name="movil_num" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="id_user" name="id_user" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="trabajo_cia" name="trabajo_cia" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="trabajo_periodo_fin" name="trabajo_periodo_fin" placeholder="Escriba aquí su respuesta" type="text" class="datepicker hide-element">
+          <input id="trabajo_puesto" name="trabajo_puesto" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="trabajo_func" name="trabajo_func" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="chingon" name="chingon" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+          <input id="jsonData" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
         </div>
         <div class="col s3">
           <a id="sendNombre" onclick="sendUserMessage('nombre');" class="btn waves-effect belieff-green" >Enviar<i class="material-icons right">send</i></a>
