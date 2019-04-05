@@ -4,6 +4,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, make_response,jsonify, send_from_directory
 import requests
 from lib.config import URL, TOKEN
+from lib.format import formatData
 
 header = {'Content-Type': 'application/json', 'Authorization': TOKEN}
 
@@ -14,16 +15,10 @@ def index():
 
 @app.route('/userData', methods = ['GET', 'POST'])
 def sendData():
-    data = request.data
-    print(data)
-    print('data 1')
-    data = json.loads(data)
-    print('data 2')
-    data = json.dumps(data)
-    print(' data 3')
+    data = request.form
+    data = formatData(**data)
     r = requests.post(url=URL, data=data, headers=header)
-    print(r.text)
-    redirect('/')
+    return redirect('/')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=80)
+    app.run(host="0.0.0.0", port=80, debug=True)
