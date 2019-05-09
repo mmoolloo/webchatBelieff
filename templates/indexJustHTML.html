@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Belieff Chat</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="belieffChat.css">
+</head>
+
+<body>
+  <div class="row">
+    <div class="col s12">
+      <div id="log" class="card-panel chatdiv text-darken-2"></div>
+    </div>
+  </div>
+  <form id="chatform" class="center inputdiv" name="userData" action="/userData" method="POST">
+    <div class="row">
+      <div class="col s9">
+        <input id="nombre" name="nombre" placeholder="Escriba aquí su respuesta" type="text" data-length="50" class="yellow-border">
+        <input id="apellido" name="apellido" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="movil_num" name="movil_num" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="id_user" name="id_user" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="trabajo_cia" name="trabajo_cia" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="trabajo_periodo_fin" name="trabajo_periodo_fin" placeholder="Haga click aquí para seleccionar la fecha" type="text" class="datepicker hide-element">
+        <input id="trabajo_puesto" name="trabajo_puesto" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="trabajo_func" name="trabajo_func" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="chingon" name="chingon" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+        <input id="jsonData" placeholder="Escriba aquí su respuesta" type="text" class="hide-element">
+      </div>
+      <div class="col s3 right-align">
+        <a id="sendNombre" onclick="sendUserMessage('nombre');" class="btn waves-effect white belieff-yellow-text" >Enviar<i class="material-icons right">send</i></a>
+        <a id="sendApellido" onclick="sendUserMessage('apellido');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <a id="sendMovil_num" onclick="sendUserMessage('movil_num');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <a id="sendId_user" onclick="sendUserMessage('id_user');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <a id="sendTrabajo_cia" onclick="sendUserMessage('trabajo_cia');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <a id="sendTrabajo_periodo_fin" onclick="sendUserMessage('trabajo_periodo_fin');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <a id="sendTrabajo_puesto" onclick="sendUserMessage('trabajo_puesto');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <a id="sendTrabajo_func" onclick="sendUserMessage('trabajo_func');" class="btn waves-effect white belieff-yellow-text hide-element">Enviar<i class="material-icons right">send</i></a>
+        <button id="sendChingon" onclick="sendUserMessage('chingon');" class="btn waves-effect white belieff-yellow-text hide-element" type="submit">Enviar<i class="material-icons right">send</i></button>
+      </div>
+    </div>
+    <div id="actual" class="row hide-element">
+      <div class="col s6">
+        <a id="actualSi" onclick="sendUserMessage('actualSi');" class="btn waves-effect white belieff-yellow-text">Sí</a>
+      </div>
+      <div class="col s6">
+        <a id="actualNo" onclick="sendUserMessage('actualNo');" class="btn waves-effect white belieff-yellow-text">No</a>
+      </div>
+    </div>
+    <div id="pasado" class="row hide-element">
+      <div class="col s6">
+        <a id="pasadoSi" onclick="sendUserMessage('pasadoSi');" class="btn waves-effect white belieff-yellow-text">Sí</a>
+      </div>
+      <div class="col s6">
+        <button id="pasadoNo" onclick="sendUserMessage('pasadoNo');" class="btn waves-effect white belieff-yellow-text" type="submit">No</button>
+      </div>
+    </div>
+  </form>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/0.3.4/sockjs.min.js"></script>
+<script src="belieffChat.js"></script>
+
+</html>
